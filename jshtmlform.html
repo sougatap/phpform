@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML FORM</title>
+</head>
+<body>
+	<h1>appilication form</h1>
+	<form id="frm" action="" method="post" enctype="mutipart/form-data" onsubmit="return validate()"><!-- enctype tag save any file encrypt type-->
+		<input type="hidden" value="hidden value" name ="hdn" id="hdn">
+		<input type="text" id="name" name="name" placeholder="enter your name" required=""><br><br>
+		<input type="email" name="email" id="email" placeholder="enter your email" required=""><br><br>
+		<input type="password" name="pswd" id="pswd" placeholder="enter password(8-16 charaacters)"><br><br>
+		<textarea placeholder="enter address" name="addr" id="addr" rows="s" cols="30"></textarea><br><br>
+		Gender:<input type="radio" name="gender" id="g1" value="M" checked>Male<!-- name should be always same-->
+		<input type="radio" name="gender" id="g1" value="F">Female
+		<select name="cntr" id="cntr" required="" multiple>
+			<option value="">sellect country</option>
+			<option value="india" selected>INDIA</option>
+			<option value="USA">USA</option>
+			<option value="UK">UK</option>
+		</select><br><br>
+		language(s) known :<input type="checkbox" name="l1" value="bengali" checked>bengali<!-- in case of checkbox name always different either name would same then last value will only submit-->
+		<input type="checkbox" name="l2" value="hindi">hindi
+		<input type="checkbox" name="l1" value="english">english
+		Date of birth:
+		<input type="date" name="dob" id="dob"><br><br>
+		select photo:
+		<input type="file" name="photo" id="photo" accept="image/*"><!-- accept tag only select image file-->
+		<input type="submit" name="" value="Apply">
+		<input type="reset" name="" value="clear">
+	</form>
+	<script type="text/javascript">
+		document.getElementById("dob").min="1990-01-01";
+		function validate()
+		{
+			var pswd = document.getElementById("pswd").value;
+			if(pswd.length>=8 && pswd.length<=15)
+				return true;
+			else
+			{
+				alert("check the password length");
+				return false;
+			}
+		} 
+	</script>>
+</body>
+</html>
